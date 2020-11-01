@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Storyboarded {
+final class MainMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Storyboarded {
     let APP_SECTION_CELL_ID = "sectionCell"
     let APP_SECTION_VIEW_CELL_NIBNAME = "AppSectionViewCell"
     

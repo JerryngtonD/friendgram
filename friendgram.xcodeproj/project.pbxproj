@@ -26,6 +26,7 @@
 		5C50E3762545F588008FE798 /* AppSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50E3752545F588008FE798 /* AppSection.swift */; };
 		5C50E37A25461ED3008FE798 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50E37925461ED3008FE798 /* Colors.swift */; };
 		5C50E37D25461F94008FE798 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50E37C25461F94008FE798 /* Fonts.swift */; };
+		5C8880AF254EE61C00FF1DF8 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C8880AE254EE61C00FF1DF8 /* Auth.storyboard */; };
 		5C93028125421CC2003798F9 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93028025421CC2003798F9 /* UserDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		5C50E3752545F588008FE798 /* AppSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSection.swift; sourceTree = "<group>"; };
 		5C50E37925461ED3008FE798 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5C50E37C25461F94008FE798 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		5C8880AE254EE61C00FF1DF8 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		5C93028025421CC2003798F9 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				5C4CF0C725349010003517F1 /* AppDelegate.swift */,
 				5C4CF0C925349010003517F1 /* SceneDelegate.swift */,
 				5C4CF0CD25349010003517F1 /* Main.storyboard */,
+				5C8880AE254EE61C00FF1DF8 /* Auth.storyboard */,
 				5C4CF0D025349014003517F1 /* Assets.xcassets */,
 				5C4CF0D525349014003517F1 /* Info.plist */,
 				5C382FB3253B7A2B00A6F78F /* Coordinator.swift */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C50E3702545E845008FE798 /* AppSectionViewCell.xib in Resources */,
+				5C8880AF254EE61C00FF1DF8 /* Auth.storyboard in Resources */,
 				5C4CF0D125349014003517F1 /* Assets.xcassets in Resources */,
 				5C4CF0CF25349010003517F1 /* Main.storyboard in Resources */,
 				5C382FC5253C4E7800A6F78F /* FriendViewCell.xib in Resources */,

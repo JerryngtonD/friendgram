@@ -8,10 +8,10 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController, Storyboarded {
-    let FRIEND_VIEW_CELL_ID = "friendCell"
-    let FRIEND_VIEW_CELL_NIBNAME = "FriendViewCell"
-        
+final class FriendsTableViewController: UITableViewController, Storyboarded {
+    let friendViewCellId = "friendCell"
+    let friendViewCellNibName = "FriendViewCell"
+    
     weak var coordinator: MainCoordinator?
     
     let users: [User] = [
@@ -23,7 +23,7 @@ class FriendsTableViewController: UITableViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(UINib(nibName: FRIEND_VIEW_CELL_NIBNAME, bundle: nil), forCellReuseIdentifier: FRIEND_VIEW_CELL_ID)
+        self.tableView.register(UINib(nibName: friendViewCellNibName, bundle: nil), forCellReuseIdentifier: friendViewCellId)
         
         self.tableView.separatorStyle = .none
         
@@ -45,17 +45,7 @@ extension FriendsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: FRIEND_VIEW_CELL_ID, for: indexPath) as? FriendViewCell {
-            let friendPerCell = users[indexPath.row]
-            
-            cell.firstName.text = friendPerCell.firstName
-            cell.secondName.text = friendPerCell.secondName
-            cell.icon.image = UIImage(named: friendPerCell.icon)
-            
-            return cell
-        }
-        
-        return UITableViewCell()
+        return FriendViewCell.configure(tableView: tableView, indexPath: indexPath, users: users)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

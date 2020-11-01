@@ -20,14 +20,14 @@ class MainCoordinator: Coordinator {
     
     func start() {
         navigationController.setNavigationBarHidden(true, animated: false)
-        let vc = LoginViewController.instantiate()
+        let vc = LoginViewController.instantiate(name: "Auth")
         
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
     
     func openMainMenu(profile: ProfileShort) {
-        let vc = MainMenuViewController.instantiate()
+        let vc = MainMenuViewController.instantiate(name: "Main")
         
         vc.profileShort = profile
     
@@ -39,7 +39,7 @@ class MainCoordinator: Coordinator {
     
     func openFriends() {
         navigationController.setNavigationBarHidden(false, animated: false)
-        let vc = FriendsTableViewController.instantiate()
+        let vc = FriendsTableViewController.instantiate(name: "Main")
         vc.coordinator = self
         
         
@@ -49,7 +49,7 @@ class MainCoordinator: Coordinator {
     }
     
     func openUserDetails(user: User) {
-        let vc = UserDetailsViewController.instantiate()
+        let vc = UserDetailsViewController.instantiate(name: "Main")
         vc.coordinator = self
         vc.user = user
         

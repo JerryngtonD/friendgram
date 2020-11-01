@@ -8,11 +8,11 @@
 
 import UIKit
 
-class UserDetailsViewController: UIViewController, Storyboarded {
+final class UserDetailsViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     var user: User?
-    private let INCOGNITO_ICON = "incognito"
     
+    private(set) var INCOGNITO_ICON = "incognito"
     
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var firstName: UILabel!

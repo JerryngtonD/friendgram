@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, Storyboarded {
+final class LoginViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     
     @IBOutlet weak var login: UITextField!
@@ -27,17 +27,13 @@ class LoginViewController: UIViewController, Storyboarded {
             let profile = ProfileShort(combinedNickname: "Emelyanov Alex", icon: "incognito", status: "online", lastLoginDate: Date())
             coordinator?.openMainMenu(profile: profile)
         } else {
-             rememberTip.isHidden = false
+            RememberState.setState(forLabel: rememberTip, state: .visible)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        rememberTip.isHidden = true
-        rememberTip.textColor = UIColor.FlatColor.Red.TerraCotta
-        rememberTip.font = UIFont.customFont(name: "AlNile-Bold", size: 24.0)
-        
-        
+        RememberState.setState(forLabel: rememberTip, state: .hidden)
         authorizeButton.titleLabel?.font = UIFont.customFont(name: "AlNile-Bold", size: 30.0)
     }
     
@@ -55,5 +51,22 @@ class LoginViewController: UIViewController, Storyboarded {
 
 extension LoginViewController {
     
+}
+
+enum RememberState {
+    case hidden
+    case visible
+    
+    static func setState(forLabel label: UILabel, state: RememberState) {
+        label.textColor = UIColor.FlatColor.Red.TerraCotta
+        label.font = UIFont.customFont(name: "AlNile-Bold", size: 24.0)
+        switch(state) {
+        case .hidden:
+                   label.isHidden = true
+                   
+        case .visible:
+            label.isHidden = false
+        }
+    }
 }
 

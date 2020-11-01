@@ -9,6 +9,8 @@
 import UIKit
 
 class FriendViewCell: UITableViewCell {
+    static let friendViewCellId = "friendCell"
+    static let friendViewCellNibName = "FriendViewCell"
 
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var firstName: UILabel!
@@ -26,4 +28,20 @@ class FriendViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+extension FriendViewCell {
+    static func configure(tableView: UITableView, indexPath: IndexPath, users: [User]) -> UITableViewCell {
+          if let cell = tableView.dequeueReusableCell(withIdentifier: friendViewCellId, for: indexPath) as? FriendViewCell {
+                    let friendPerCell = users[indexPath.row]
+                    
+                    cell.firstName.text = friendPerCell.firstName
+                    cell.secondName.text = friendPerCell.secondName
+                    cell.icon.image = UIImage(named: friendPerCell.icon)
+                    
+                    return cell
+                }
+                
+                return UITableViewCell()
+      }
 }
